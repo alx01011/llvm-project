@@ -154,7 +154,7 @@ ALWAYS_INLINE void StoreShadow(RawShadow* sp, RawShadow s) {
 
   Shadow cur(LoadShadow(sp));
 
-#include <stdio.h>  
+#include <cstdio>  
   //dbgs("#%d: StoreShadow: %p %zx %zx\n", cur.sid(), sp, cur.epoch(), s);
   fprintf(stderr, "#%d: StoreShadow: %p %zx %zx\n", cur.sid(), sp, cur.epoch(), s);
 
