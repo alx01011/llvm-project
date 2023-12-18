@@ -154,8 +154,10 @@ ALWAYS_INLINE void StoreShadow(RawShadow* sp, RawShadow s) {
 
   Shadow cur(LoadShadow(sp));
 
-  DPrintf("#%d: StoreShadow: %p %zx %zx\n", cur.sid(), sp, cur.epoch(), s);
-
+  
+  //dbgs("#%d: StoreShadow: %p %zx %zx\n", cur.sid(), sp, cur.epoch(), s);
+#include <debug.h>
+  dbgs() << "# " <<  "StoreShadow: " << sp << ", epoch: " << cur.epoch() << " " << s << "\n";
 
   atomic_store((atomic_uint32_t*)sp, static_cast<u32>(s), memory_order_relaxed);
 }
